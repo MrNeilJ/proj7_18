@@ -31,5 +31,20 @@ int main()
         printStars(width);
 
         // Print box sides
+        for (int sideRow = 1; sideRow <= height; sideRow++)
+        {
+            placeCursor(screen, startRow + sideRow, midCol - width/2);
+            cout << '*' << endl;
+            placeCursor(screen, startRow + sideRow, midCol + width/2);
+            cout << '*' << endl;
+        }
+        // Draw box bottom
+        placeCursor(screen, endRow, midCol - width/2);
+        printStars(width);
+
+        Sleep(750);     // Pause 3/4 second between boxes displayed
     }
+
+    placeCursor(screen, 20, 0); // Move cursor out of the way
+    return 0;
 }
