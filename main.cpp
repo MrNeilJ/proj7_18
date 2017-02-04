@@ -48,3 +48,14 @@ int main()
     placeCursor(screen, 20, 0); // Move cursor out of the way
     return 0;
 }
+
+/***************************************************************
+ *                          placeCursor                        *
+ ***************************************************************/
+void placeCursor(HANDLE screen, int row, int col)
+{
+    COORD position;
+    position.Y = row;
+    position.X = col;
+    SetConsoleCursorPosition(screen, position);
+}
